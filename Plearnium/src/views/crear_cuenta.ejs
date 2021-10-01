@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Roboto&display=swap" rel="stylesheet">
+        <link href= "/css/style.css" rel="stylesheet" type="text/css" />
+        <title>Crear Cuenta | Plearnium</title>
+        <link rel="shortcut icon" type="image" href="img/master_terny.png">
+    </head>
+    <body>
+        <div class="container" id="container">
+            <div class="bg-img">
+                <div class="content">
+                    <header>Crear Cuenta</header>
+                    <form name="registro" action="/registro" method="post">
+                        <div class="field">
+                            <span></span>
+                            <input type="text" required placeholder="Nombre" name= "nombre">
+                        </div>
+                        <div class="field space">
+                            <span></span>
+                            <input type="text" required placeholder="ID" name= "id">
+                        </div>
+                        <div class="field space">
+                            <span></span>
+                            <input type="text" required placeholder="Email" name="email">
+                        </div>
+                        <div class="field space">
+                            <input type="password" class="password" requred placeholder="Contraseña" name= "password">
+                            <span class="show"></span>
+                        </div>
+                        <div class="field space">
+                            <input type="password" class="password" requred placeholder="Confirma Contraseña">
+                            <span class="show"></span>
+                        </div>
+                        <div class="pass">
+                            <a href="#">¿Olvidaste tu contraseña?</a>
+                        </div>
+                        <div class="field space">
+                            <input type="submit" value="Sign up">
+                        </div>
+                        <div class="signup">¿Ya tienes una cuenta?
+                            <a href="iniciar_sesion">Inicia sesión ahora</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <script>
+                const pass_field = document.querySelector('.password');
+                const show_btn = document.querySelector('.show');
+                pass_field.addEventListener('click', function(){
+                    if(pass_field.type === "password"){
+                        pass_field.type = "text";
+                        show_btn.style.color = "#3498db";
+                        show_btn.textContent = "HIDE";
+                    }else{
+                        pass_field.type = "password";
+                        show_btn.style.color = "#222";
+                        show_btn.textContent = "SHOW";
+                    }
+                });
+            </script>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+    </body>
+</html>

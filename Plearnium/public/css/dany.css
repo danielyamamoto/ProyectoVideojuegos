@@ -1,0 +1,73 @@
+h1{
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 50px
+}
+
+h2{
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: medium;
+}
+
+h3{
+    text-align:left;
+    margin-left: 15px;
+    font-family:'Courier New', Courier, monospace;
+    font-size: 30px;
+}
+
+p{
+    text-align: justify;
+    margin-left: 100px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+}
+
+.notbold{
+    font-weight: normal;
+}
+
+.smaller-image{
+    width: 30px;
+}
+
+.small-image{
+    width: 50px
+}
+
+.qr-code{
+    width:80px;
+}
+
+.left-margin{
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+
+.about-me{
+    margin-left: 0px;
+    top: 170px;
+}
+
+.vl{
+    border-left: 6px;
+    height: 880px;
+    position: absolute;
+    left:27%;
+    margin-left: -3px;
+    top: 175px;
+}
+
+.rectangle{
+    height: 10px;
+    width: 150px;
+    position: absolute;
+    left: 20%;
+    background-color: aquamarine;
+}
+
+.about-me{
+    top: 175px;
+    text-align: center;
+}

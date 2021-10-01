@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Roboto&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+        <title>Configuración | Plearnium</title>
+        <link rel="shortcut icon" type="image" href="img/master_terny.png">
+    </head>
+    <body>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="iniciar_sesion">CERRAR SESIÓN</a></li>
+                </ul>
+            </nav>
+            <div class="navbar">
+                <a href="https://mx.ternium.com/es" target="_blank"><img src="img/logo.png" class="logo"></a>
+                <nav>
+                    <ul>
+                        <li><a href="inicio">INICIO</a></li>
+                        <li><a href="juego">JUEGO</a></li>
+                        <li><a href="sobre_ternium">SOBRE TERNIUM</a></li>
+                        <li><a href="proceso">PROCESO</a></li>
+                        <li><a href="creadores">CREADORES</a></li>
+                    </ul>
+                </nav>
+            </div>
+        <a href="usuario"><button type="button" class="button_asignar btn btn-danger">Admin</button></a>
+        
+            <div class="bg-img">
+                <div class="content">
+                    <header>Configuración de conceptos para juego</header>
+                    <form name="configuracion" action="/configuracion" method="POST">
+                        <div class="field">
+                            <span></span>
+                            <input type="text" name ="nom_grupo" required placeholder="Nombre de Grupo" >
+                        </div>
+                        <div class="field">
+                            <span></span>
+                            <input type="text" name ="concepto" required placeholder="Concepto">
+                        </div>
+                        <div class="field space">
+                            <input type="submit" value="Submit">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
