@@ -1,0 +1,488 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "Web API Express",
+        "description": "My WebApi using Node",
+        "license": {
+            "name": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+        }
+    },
+    "host": "https://webapitec2005b.azurewebsites.net/api-docs/#/Usuario/getUsuarios",
+    "basePath": "/",
+    "tags": [
+        {
+            "name": "Usuario",
+            "description": "API de usuarios de la aplicación"
+        },
+        {
+            "name": "Jugador",
+            "description": "API de jugadores en la aplicación"
+        },
+        {
+            "name": "Concepto",
+            "description": "API de conceptos en la aplicación"
+        }
+    ],
+    "schemes": [
+        "http",
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/api/getUsuarios": {
+            "get": {
+                "tags": [
+                    "Usuario"
+                ],
+                "summary": "Obtiene todos los usuarios",
+                "description": "Regresa todos los usuarios",
+                "operationId": "getUsuarios",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Operación exitosa",
+                        "schema": {
+                            "$ref": "#/definitions/Usuario"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/getUsuario/{id}": {
+            "get": {
+                "tags": [
+                    "Usuario"
+                ],
+                "summary": "Encuentra un usuario por id",
+                "description": "Regresa el usuario con el id solicitado",
+                "operationId": "getUsuario",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "Id del usuario a consultar",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Operación exitosa",
+                        "schema": {
+                            "$ref": "#/definitions/Usuario"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/addUsuario": {
+            "post": {
+                "tags": [
+                    "Usuario"
+                ],
+                "summary": "Agrega un nuevo usuario",
+                "description": "Agrega un usuario a la base de datos",
+                "operationId": "addUsuario",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Nuevo jugador",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Usuario"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Operación exitosa",
+                        "schema": {
+                            "$ref": "#/definitions/Usuario"
+                        }
+                    },
+                    "405": {
+                        "description": "Datos inválidos"
+                    }
+                }
+            }
+        },
+        "/api/createUser": {
+            "post": {
+                "tags": [
+                    "Usuario"
+                ],
+                "summary": "Agrega un nuevo usuario",
+                "description": "Agrega un usuario a la base de datos",
+                "operationId": "createUser",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Nuevo jugador",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Usuario"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Operación exitosa",
+                        "schema": {
+                            "$ref": "#/definitions/Usuario"
+                        }
+                    },
+                    "405": {
+                        "description": "Datos inválidos"
+                    }
+                }
+            }
+        },
+        "/api/updateUsuario/{id}": {
+            "put": {
+                "tags": [
+                    "Usuario"
+                ],
+                "summary": "Actualiza un usuario",
+                "description": "Actualiza un usuario a la base de datos",
+                "operationId": "updateUsuario",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "Id del usuario a actualizar",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Datos nuevos usuario",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Usuario"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Operación exitosa",
+                        "schema": {
+                            "$ref": "#/definitions/Usuario"
+                        }
+                    },
+                    "400": {
+                        "description": "Jugador Inválido"
+                    },
+                    "404": {
+                        "description": "Jugador no encontrado"
+                    }
+                }
+            }
+        },
+        "/api/updateAdmin/{nombre}": {
+            "put": {
+                "tags": [
+                    "Usuario"
+                ],
+                "summary": "Actualiza un usuario",
+                "description": "Actualiza un usuario a la base de datos",
+                "operationId": "updateAdmin",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "nombre",
+                        "description": "nombre del usuario a actualizar",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Datos nuevos usuario",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Usuario"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Operación exitosa",
+                        "schema": {
+                            "$ref": "#/definitions/Usuario"
+                        }
+                    },
+                    "400": {
+                        "description": "Usuario Inválido"
+                    },
+                    "404": {
+                        "description": "Usuario no encontrado"
+                    }
+                }
+            }
+        },
+        "/api/getRanking": {
+            "get": {
+                "tags": [
+                    "Jugador"
+                ],
+                "summary": "Obtiene todos los jugadores",
+                "description": "Regresa todos los jugadores",
+                "operationId": "getRanking",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Operación exitosa",
+                        "schema": {
+                            "$ref": "#/definitions/Jugador"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/getJugador/{id}": {
+            "get": {
+                "tags": [
+                    "Jugador"
+                ],
+                "summary": "Encuentra un jugador por id",
+                "description": "Regresa el jugador con el id solicitado",
+                "operationId": "getJugador",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "Id del usuario a consultaar",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Operación exitosa",
+                        "schema": {
+                            "$ref": "#/definitions/Jugador"
+                        }
+                    }
+                }
+            }
+        }, 
+        "/api/updatePlayer/{id}": {
+            "put": {
+                "tags": [
+                    "Jugador"
+                ],
+                "summary": "Actualiza un  jugador",
+                "description": "Actualiza un jugador a la base de datos",
+                "operationId": "updatePlayer",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "Id del jugador a actualizar",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Datos nuevos jugador",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Jugador"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Operación exitosa",
+                        "schema": {
+                            "$ref": "#/definitions/Jugador"
+                        }
+                    },
+                    "400": {
+                        "description": "Jugador Inválido"
+                    },
+                    "404": {
+                        "description": "Jugador no encontrado"
+                    }
+                }
+            }
+        },
+        
+        "/api/getConceptos": {
+            "get": {
+                "tags": [
+                    "Concepto"
+                ],
+                "summary": "Obtiene todos los conceptos",
+                "description": "Regresa todos los conceptos",
+                "operationId": "getConceptos",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Operación exitosa",
+                        "schema": {
+                            "$ref": "#/definitions/Concepto"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/addConcepto": {
+            "post": {
+                "tags": [
+                    "Concepto"
+                ],
+                "summary": "Agrega un nuevo concepto",
+                "description": "Agrega un concepto a la base de datos",
+                "operationId": "addConcepto",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Nuevo concepto",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Concepto"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Operación exitosa",
+                        "schema": {
+                            "$ref": "#/definitions/Concepto"
+                        }
+                    },
+                    "405": {
+                        "description": "Datos inválidos"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Usuario": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "nombre": {
+                    "type": "string"
+                },
+                "id_grupo": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "tipo": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "estatus": {
+                    "type": "string"
+                }
+            }
+        }, 
+        "Jugador": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "color": {
+                    "type": "string"
+                },
+                "puntaje": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "diasConsec": {
+                    "type": "integer",
+                    "format": "int64"
+                }
+            }
+        },
+        "Concepto": {
+            "type": "object",
+            "properties": {
+                "id_concepto": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "nom_grupo": {
+                    "type": "string"
+                },
+                "concepto": {
+                    "type": "string"
+                }
+            }
+        }  
+    }
+}
