@@ -67,10 +67,10 @@ app.post('/asignar_admin', async (req, res) =>{
 
     await axios.put(`http://localhost:3001/api/updateAdmin/${nombre}`, { 
         nombre: nombre
-      })
-      .then(function (response) {
+    })
+    .then(function (response) {
         console.log(response);
-      })
+    })
     res.redirect('usuario')
 })
 
@@ -78,10 +78,12 @@ app.post('/asignar_admin', async (req, res) =>{
 app.get('/sobre_ternium', (req,res) =>{
     res.render('sobre_ternium')
 });
+
 //proceso
 app.get('/proceso', (req,res) =>{
     res.render('proceso')
 });
+
 //usuario
 const usuariosRouter = require('./src/routes/usuario')
 app.use('/usuario', usuariosRouter)
@@ -100,58 +102,73 @@ app.use('/juego_admin', juego_adminRouter)
 app.get('/juego',validaAutentificacion, (req, res)=>{
     res.render("juego", {user:req.user})
 })
+
 //estadisticas
 app.get('/estadisticas', (req,res) =>{
     res.render('estadisticas')
 });
+
 //estadisticas individuales
 app.get('/estad_indiv', (req,res) =>{
     res.render('estad_indiv')
 });
+
 //registro
 app.get('/registro', (req,res) =>{
     res.render('registro')
 });
+
 //creadores
 app.get('/creadores', (req,res) =>{
     res.render('creadores')
 });
+
 //CVs
 app.get('/melissaCV', (req,res) =>{
     res.render('melissaCV')
 });
+
 app.get('/emma_CV', (req,res) =>{
     res.render('emma_CV')
 });
+
 app.get('/jessica_CV', (req,res) =>{
     res.render('jessica_CV')
 });
+
 app.get('/robyCV', (req,res) =>{
     res.render('robyCV')
 });
+
 app.get('/dany_cv', (req,res) =>{
     res.render('dany_cv')
 });
+
 //tabla de puntos vista admin
 app.get('/admin_tabla_puntos', (req,res) =>{
     res.render('admin_tabla_puntos')
 });
+
 //tabla de puntos vista admin
 app.get('/chart', (req,res) =>{
     res.render('chart')
 });
+
 //juego admin
 app.get('/juego_admin', (req,res) =>{
     res.render('juego_admin')
 });
+
 //configuracion
 app.get('/configuracion', (req,res) =>{
     res.render('configuracion')
 });
+
 //addConcepto
 app.get('/addConcepto', (req,res) =>{
     res.render('addConcepto')
 });
+
 //inicio
 app.get('/inicio', (req,res) =>{
     res.render('inicio')
@@ -169,10 +186,10 @@ app.post('/registro', async (req, res) =>{
         nombre: nombre,
         password: password,
         email: email
-      })
-      .then(function (response) {
+    })
+    .then(function (response) {
         console.log(response);
-      })
+    })
     res.render('inicio')
 })
 
@@ -184,10 +201,10 @@ app.post('/configuracion', async (req, res) =>{
     await axios.post('http://localhost:3001/api/addConcepto', { 
         nom_grupo: nom_grupo,
         concepto: concepto
-      })
-      .then(function (response) {
+    })
+    .then(function (response) {
         console.log(response);
-      })
+    })
     res.render('addConcepto')
 })
 
