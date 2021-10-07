@@ -34,7 +34,13 @@ create TABLE Empleado(
    diasConsec int
 );
 
-create table CasaCampo (
+--Se agregan datos a tabla de Grupo y a tabla de Proceso
+create table Grupo(
+	id int not null primary key,
+	nombre VARCHAR(255)
+);
+
+create table CasaCampo(
 	id_concepto INT,
 	id_grupo INT,
 	tipo BIT,
@@ -52,12 +58,6 @@ create table Jugador(
    otro INT,
    nickname varchar(255) NULL,
    color varchar(255) NULL,
-);
-
---Se agregan datos a tabla de Grupo y a tabla de Proceso
-create table Grupo (
-	id int not null primary key,
-	nombre VARCHAR(255)
 );
 
 --Tabla de proceso contiene el id del proceso que se va a utulizar
@@ -79,14 +79,14 @@ insert into Acomoda values (1, 6, 'Facturación')
 insert into Acomoda values (1, 7, 'Cobranza')
 insert into Acomoda values (1, 8, 'Post-Venta')
 
-create table ConceptosCasaCampo (
-    id_concepto int identity Primary Key clustered,
-    id_grupo INT,
-    nom_grupo VARCHAR(255),
-    tipo BIT,
-    numSecuencia INT,
-    concepto VARCHAR(255),
-    FOREIGN KEY (id_grupo) REFERENCES Grupo(id)
+create table ConceptosCasaCampo(
+   id_concepto int identity Primary Key clustered,
+   id_grupo INT,
+   nom_grupo VARCHAR(255),
+   tipo BIT,
+   numSecuencia INT,
+   concepto VARCHAR(255),
+   FOREIGN KEY (id_grupo) REFERENCES Grupo(id)
 );
 
 --MINIJUEGO TERNY ACOMODA
