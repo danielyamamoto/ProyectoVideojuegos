@@ -4,7 +4,8 @@ create TABLE Usuario(
    nombre varchar(50),
    email varchar(30),
    estatus varchar(30),
-   tipo varchar(30)
+   tipo varchar(30),
+   id_grupo int
 );
 
 create TABLE Administrador(
@@ -66,7 +67,7 @@ create table Proceso(
    id_grupo int,
    proceso varchar(30),
    CONSTRAINT FK_Proceso_Grupo FOREIGN KEY (id_grupo) REFERENCES Grupo (id)
-)
+);
 
 -- Se agregan los subprocesos
 select * from Proceso

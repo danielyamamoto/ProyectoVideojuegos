@@ -1,15 +1,16 @@
-// Server=tcp:plearnium.database.windows.net,1433;Initial Catalog=Videogame;Persist Security Info=False;User ID=plearnium;Password={your_password};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;
+// Server=tcp:plearniumserver.database.windows.net,1433;Initial Catalog=PlearniumDB;Persist Security Info=False;User ID=Terny;Password={your_password};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;
 const sql = require('mssql')
 
 const config = {
-    user: 'plearnium',
-    password: 'Terni1234',
-    database: 'Videogame',
-    server: 'plearnium.database.windows.net',
+    user: 'Terny',
+    password: 'Hola1234',
+    database: 'PlearniumDB',
+    server: 'plearniumserver.database.windows.net',
     options: {
     trustedConnection: true
   }
-} 
+}
+
 const poolPromise = new sql.ConnectionPool(config)
   .connect()
   .then(pool => {
