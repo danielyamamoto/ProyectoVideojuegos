@@ -84,6 +84,11 @@ app.get('/proceso', (req,res) =>{
     res.render('proceso')
 });
 
+//procesoV1
+app.get('/procesoV1', (req,res) =>{
+    res.render('procesoV1')
+});
+
 //usuario
 const usuariosRouter = require('./src/routes/usuario')
 app.use('/usuario', usuariosRouter)
